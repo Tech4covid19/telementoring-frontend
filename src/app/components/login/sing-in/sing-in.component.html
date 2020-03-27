@@ -1,0 +1,30 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Log in</mat-card-title>
+        </mat-card-header>
+
+        <form class="login-form">
+            <mat-card-content>
+                <mat-form-field class="login-full-width">
+                    <input type="email" matInput placeholder="Email" />
+                </mat-form-field>
+
+                <mat-form-field class="login-full-width">
+                    <input type="password" matInput placeholder="Password" />
+                </mat-form-field>
+            </mat-card-content>
+            <button mat-stroked-button color="accent" class="btn-block">
+        Log in
+      </button>
+        </form>
+        <span>Not registered yet?
+      <a [routerLink]="['register']">Create your account here!</a></span
+    >
+    <span
+      >Did you forgot your password?
+      <a [routerLink]="['reset-password']">Reset it here!</a></span
+    >
+  </mat-card>
+</div>
+<router-outlet></router-outlet>
