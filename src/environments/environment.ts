@@ -5,14 +5,17 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'AIzaSyCTXe9fuOk-GLSgbn8soNapGKkpaxJuouA',
-    authDomain: 'doctorpal.firebaseapp.com',
-    databaseURL: 'https://doctorpal.firebaseio.com',
-    projectId: 'doctorpal',
-    storageBucket: 'doctorpal.appspot.com',
-    messagingSenderId: '590003567078',
-    appId: '1:590003567078:web:b18153cd206b2c6c8bbe27',
-    measurementId: 'G-FLPX5S22RF'
+    apiKey: 'AIzaSyCLN7bY4eojTcGFhHuC7gOHBbysOFYjF4w',
+    authDomain: 'tech4covid19-telementoring.firebaseapp.com',
+    databaseURL: 'https://tech4covid19-telementoring.firebaseio.com',
+    projectId: 'tech4covid19-telementoring',
+    storageBucket: 'tech4covid19-telementoring.appspot.com',
+    messagingSenderId: '956804741314',
+    appId: '1:956804741314:web:0001e1bc9eae3e3410635b',
+    measurementId: 'G-K694CC7W1L'
+  },
+  webRTCConfig: {
+    signalingServerAddress: 'ws://localhost:3000/ws'
   }
 };
 
