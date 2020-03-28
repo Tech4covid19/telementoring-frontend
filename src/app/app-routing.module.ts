@@ -1,5 +1,5 @@
+import { ChatRoomComponent } from './components/chat/chat-room/chat-room.component';
 import { SingInComponent } from './components/login/sing-in/sing-in.component';
-import { UserListComponent } from './components/chat/user-list/user-list.component';
 import { ResetPasswordComponent } from './components/login/reset-password/reset-password.component';
 import { RegistrationComponent } from './components/login/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
@@ -18,7 +18,10 @@ const routes: Routes = [
       { path: 'reset-password', component: ResetPasswordComponent }
     ]
   },
-  { path: 'chat', component: UserListComponent }
+  {
+    path: 'chat-room',
+    component: ChatRoomComponent
+  }
 ];
 
 @NgModule({
