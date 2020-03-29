@@ -19,6 +19,7 @@ import { ResetPasswordComponent } from './components/login/reset-password/reset-
 import { SingInComponent } from './components/login/sing-in/sing-in.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ChatComponent } from './components/chat/chat.component';
+import { VerifyEmailComponent } from './components/login/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ChatComponent } from './components/chat/chat.component';
     ResetPasswordComponent,
     SingInComponent,
     ChatComponent,
-    ChatRoomComponent
+    ChatRoomComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,

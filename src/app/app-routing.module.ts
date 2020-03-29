@@ -1,3 +1,4 @@
+import { VerifyEmailComponent } from './components/login/verify-email/verify-email.component';
 import { ChatRoomComponent } from './components/chat/chat-room/chat-room.component';
 import { SingInComponent } from './components/login/sing-in/sing-in.component';
 import { ResetPasswordComponent } from './components/login/reset-password/reset-password.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
       { path: '**', redirectTo: 'login', pathMatch: 'full' },
       { path: '', component: SingInComponent },
       { path: 'register', component: RegistrationComponent },
-      { path: 'reset-password', component: ResetPasswordComponent }
+      { path: 'reset-password', component: ResetPasswordComponent },
+      { path: 'verify-email', component: VerifyEmailComponent }
     ]
   },
   {

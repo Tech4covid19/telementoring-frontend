@@ -1,5 +1,5 @@
+import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sing-in',
@@ -7,11 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./sing-in.component.scss']
 })
 export class SingInComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
-  handleSingIn() {
-    this.router.navigateByUrl('/chat-room');
-  }
+  handleSingIn() {}
 }
