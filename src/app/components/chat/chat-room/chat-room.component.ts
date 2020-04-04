@@ -26,9 +26,12 @@ export class ChatRoomComponent implements OnInit {
 
   public ngOnDestroy() {
     this.pc.close();
-    let tracks = this.localStream.getTracks();
-    for (let i = 0; i < tracks.length; i++) {
-      tracks[i].stop();
+    // A variável localStream está undefined, na ação de logout
+    if(this.localStream != undefined){
+      let tracks = this.localStream.getTracks();
+      for (let i = 0; i < tracks.length; i++) {
+        tracks[i].stop();
+      }
     }
     this.callActive = false;
   }
