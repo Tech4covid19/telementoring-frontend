@@ -12,6 +12,9 @@
       />
     </svg>
     </a>
+    <button *ngIf="isLoggedIn()" mat-mini-fab type="button" (click)="logout()" title="Sign Out">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
 </div>
 
 <router-outlet></router-outlet>
