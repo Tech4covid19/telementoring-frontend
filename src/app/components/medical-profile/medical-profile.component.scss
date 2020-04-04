@@ -1,11 +1,16 @@
 .medical-profile-wrapper .medical-profile-form {
+  padding-top: 30px;
   min-width: 100%;
   max-width: 300px;
   width: 100%;
 }
 
+.row {
+  margin: 0 -10px;
+}
+
 .medical-profile-wrapper .medical-profile-full-width {
-  width: 50%;
+  width: 95%;
 }
 
 .medical-profile-wrapper .btn-block {
