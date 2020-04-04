@@ -1,0 +1,101 @@
+<div class="medical-profile-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Medical profile</mat-card-title>
+    </mat-card-header>
+    <form class="medical-profile-form" [formGroup]="medicalProfileForm" (ngSubmit)="onSubmit()">
+      <div fxLayout="row" fxLayoutWrap="wrap" class="row">
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="email" type="email" matInput placeholder="Email" />
+          </mat-form-field>
+        </div>
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <mat-select formControlName="sex" type="sex" matInput placeholder="Sex">
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="row">
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="name" type="name" matInput placeholder="Name" />
+          </mat-form-field>
+        </div>
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="country" type="country" matInput placeholder="Country" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="row">
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="surname" type="surname" matInput placeholder="Surname" />
+          </mat-form-field>
+        </div>
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="hospital" type="hospital" matInput placeholder="Hospital" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="row">
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="telephone" type="telephone" matInput placeholder="Telephone" />
+          </mat-form-field>
+        </div>
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="cellPhone" type="cellPhone" matInput placeholder="Cell phone" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="row">
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="password" type="password" matInput placeholder="Password" type="password" />
+          </mat-form-field>
+        </div>
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="speciality" type="speciality" matInput placeholder="Speciality" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="row">
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="confirmPassword" type="confirmPassword" matInput placeholder="Confirm the Password"
+              type="password" />
+          </mat-form-field>
+        </div>
+        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+          <mat-form-field class="medical-profile-full-width">
+            <input formControlName="birth" type="birth" matInput placeholder="Date of birth" [matDatepicker]="birth"
+              disabled />
+            <mat-datepicker-toggle matSuffix [for]="birth"></mat-datepicker-toggle>
+            <mat-datepicker #birth disabled="false"></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <mat-card-content>
+        <button mat-stroked-button type="submit" color="accent" class="btn-block">
+          Signup
+        </button>
+      </mat-card-content>-
+
+    </form>
+  </mat-card>
+</div>

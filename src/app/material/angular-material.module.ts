@@ -14,7 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-// import { MatNativeDateModule } from '@angular/material/';
+import { MatNativeDateModule } from "@angular/material/core";
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
@@ -39,7 +39,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTooltipModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSliderModule
+    MatSliderModule,
+    MatNativeDateModule
   ],
   exports: [
     MatButtonModule,
@@ -57,7 +58,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatChipsModule,
     MatTooltipModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatNativeDateModule
   ],
   providers: [MatDatepickerModule]
 })
