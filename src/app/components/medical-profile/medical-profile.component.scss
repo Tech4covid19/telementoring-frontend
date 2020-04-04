@@ -1,0 +1,41 @@
+.medical-profile-wrapper .medical-profile-form {
+  min-width: 100%;
+  max-width: 300px;
+  width: 100%;
+}
+
+.medical-profile-wrapper .medical-profile-full-width {
+  width: 50%;
+}
+
+.medical-profile-wrapper .btn-block {
+  width: 100%;
+}
+
+.medical-profile-wrapper mat-card-header {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: 700;
+}
+
+.medical-profile-wrapper mat-card-header mat-card-title {
+  font-size: 30px;
+  margin: 0;
+}
+
+.medical-profile-wrapper .mat-card {
+  padding: 40px 70px 50px;
+}
+
+.medical-profile-wrapper .mat-stroked-button {
+  border: 1px solid currentColor;
+  line-height: 54px;
+  background: #fff7fa;
+}
+
+.medical-profile-wrapper
+  .mat-form-field-appearance-legacy
+  .mat-form-field-infix {
+  padding: 0.8375em 0;
+}
