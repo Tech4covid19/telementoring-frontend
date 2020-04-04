@@ -20,6 +20,7 @@ import { SingInComponent } from './components/login/sing-in/sing-in.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ChatComponent } from './components/chat/chat.component';
 import { VerifyEmailComponent } from './components/login/verify-email/verify-email.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { VerifyEmailComponent } from './components/login/verify-email/verify-ema
     SingInComponent,
     ChatComponent,
     ChatRoomComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
