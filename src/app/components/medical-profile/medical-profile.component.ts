@@ -3,11 +3,11 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
-  Validators
+  Validators,
 } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { MustMatch } from 'src/app/helpers/must-match.validator';
-import { SnackBarComponent } from '../snack-bar/snack-bar.component';
+import { SnackbarComponent } from '../snack-bar/snack-bar.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-medical-profile',
@@ -16,10 +16,10 @@ import { SnackBarComponent } from '../snack-bar/snack-bar.component';
 })
 export class MedicalProfileComponent implements OnInit {
   medicalProfileForm: FormGroup;
-  durationInSeconds = 5;
   constructor(
     private formBuilder: FormBuilder,
-    private snackBar: MatSnackBar
+    public snackbar: SnackbarComponent,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -27,7 +27,10 @@ export class MedicalProfileComponent implements OnInit {
   }
 
   onSubmit() {
-    this.openSnackBar();
+    this.openSnackBar('mat-snack-bar-container-sucess');
+    setTimeout(() => {
+      this.router.navigate(['/login'])
+    }, 3600);
   }
 
   private createGroupForm() {
@@ -55,9 +58,10 @@ export class MedicalProfileComponent implements OnInit {
     );
   }
 
-  private openSnackBar() {
-    this.snackBar.openFromComponent(SnackBarComponent, {
-      duration: this.durationInSeconds * 1000,
-    });
+  private openSnackBar(color: any) {
+    this.snackbar.openSnackBar(
+      'Thanks for completing your profile. The dat will be validated and you will receive an e-mail of confirmation !',
+      color
+    );
   }
 }
