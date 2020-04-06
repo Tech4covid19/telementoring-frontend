@@ -66,7 +66,8 @@ export class MedicalProfileComponent implements OnInit {
         cellPhone: new FormControl('', [Validators.required]),
         password: new FormControl('', [
           Validators.required,
-          Validators.minLength(6),
+          Validators.minLength(10),
+          Validators.maxLength(12)
         ]),
         speciality: new FormControl('', [Validators.required]),
         confirmPassword: ['', Validators.required],
