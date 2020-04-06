@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { MustMatch } from 'src/app/helpers/must-match.validator';
 import { SnackbarComponent } from '../snack-bar/snack-bar.component';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-medical-profile',
@@ -18,8 +19,9 @@ export class MedicalProfileComponent implements OnInit {
   medicalProfileForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    public snackbar: SnackbarComponent,
-    private router: Router
+    private snackbar: SnackbarComponent,
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -47,7 +49,7 @@ export class MedicalProfileComponent implements OnInit {
       por isso após inserir a chamado do backenda, deve alterar aqui
     */
     setTimeout(() => {
-      this.router.navigate(['/login']);
+      this.authService.logout();
     }, 3600);
   }
 
