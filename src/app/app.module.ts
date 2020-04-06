@@ -21,6 +21,7 @@ import { SingInComponent } from './components/login/sing-in/sing-in.component';
 import { VerifyEmailComponent } from './components/login/verify-email/verify-email.component';
 import { MedicalProfileComponent } from './components/medical-profile/medical-profile.component';
 import { AngularMaterialModule } from './material/angular-material.module';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { AngularMaterialModule } from './material/angular-material.module';
     VerifyEmailComponent,
     DialogComponent,
     MedicalProfileComponent,
+    SnackBarComponent,
   ],
   imports: [
     BrowserModule,
