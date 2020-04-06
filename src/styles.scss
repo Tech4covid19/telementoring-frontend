@@ -92,3 +92,23 @@ body {
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
 }
+
+// Css of the mat-snack-bar component. Cannot be removed
+.mat-snack-bar-container-sucess {
+  text-align: center;
+  color: white !important;
+  background-color: blue !important;
+  .mat-simple-snackbar-action {
+      color: white !important;
+  }
+}
+
+// Css of the mat-snack-bar component. Cannot be removed
+.mat-snack-bar-container-error {
+  text-align: center;
+  color: white !important;
+  background-color: brown !important;
+  .mat-simple-snackbar-action {
+      color: white !important;
+  }
+}
