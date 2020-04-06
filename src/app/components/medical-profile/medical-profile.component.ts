@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { MustMatch } from 'src/app/helpers/must-match.validator';
 import { SnackbarComponent } from '../snack-bar/snack-bar.component';
 import { AuthService } from 'src/app/services/auth.service';
+import { PasswordValidator } from 'src/app/helpers/password.validator';
 
 @Component({
   selector: 'app-medical-profile',
@@ -48,9 +49,9 @@ export class MedicalProfileComponent implements OnInit {
       Este setTimeout só deve ser chamado se o retorno do backend for ok e sem erro de regras de negócio,
       por isso após inserir a chamado do backenda, deve alterar aqui
     */
-    setTimeout(() => {
+    /*setTimeout(() => {
       this.authService.logout();
-    }, 3600);
+    }, 3600);*/
   }
 
   private createGroupForm() {
@@ -66,8 +67,9 @@ export class MedicalProfileComponent implements OnInit {
         cellPhone: new FormControl('', [Validators.required]),
         password: new FormControl('', [
           Validators.required,
-          Validators.minLength(10),
-          Validators.maxLength(12)
+          Validators.minLength(8),
+          Validators.maxLength(12),
+          PasswordValidator()
         ]),
         speciality: new FormControl('', [Validators.required]),
         confirmPassword: ['', Validators.required],
