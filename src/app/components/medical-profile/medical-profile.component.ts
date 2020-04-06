@@ -3,11 +3,11 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
-  Validators,
+  Validators
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MustMatch } from 'src/app/helpers/must-match.validator';
 import { SnackbarComponent } from '../snack-bar/snack-bar.component';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-medical-profile',
@@ -27,9 +27,27 @@ export class MedicalProfileComponent implements OnInit {
   }
 
   onSubmit() {
-    this.openSnackBar('mat-snack-bar-container-sucess');
+    /**
+      Após implementar a chamada do backend, pode retirar estas mensagens
+
+      1º parametro
+        Mensagem que deseja que aparece, pode ser que venha do servidor ou que vc digita por aqui mesmo.
+      2º parametro
+        Se tiver erro no retorno do back end, deve alterar para this.openSnackBar('mat-snack-bar-container-error');
+        se tiver não tiver retorno do back end, deve alterar para this.openSnackBar('mat-snack-bar-container--sucess')
+    */
+    this.openSnackBar(
+      'Thanks for completing your profile. The dat will be validated and you will receive an e-mail of confirmation !',
+      'mat-snack-bar-container-sucess'
+    );
+    /**
+      Após implementar a chamada do backend, pode retirar estas mensagens
+
+      Este setTimeout só deve ser chamado se o retorno do backend for ok e sem erro de regras de negócio,
+      por isso após inserir a chamado do backenda, deve alterar aqui
+    */
     setTimeout(() => {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login']);
     }, 3600);
   }
 
@@ -58,10 +76,11 @@ export class MedicalProfileComponent implements OnInit {
     );
   }
 
-  private openSnackBar(color: any) {
-    this.snackbar.openSnackBar(
-      'Thanks for completing your profile. The dat will be validated and you will receive an e-mail of confirmation !',
-      color
-    );
+  /**
+   * @param messsage = Message you want to appear
+   * @param className = Can be: mat-snack-bar-container-sucess or mat-snack-bar-container-error
+   */
+  private openSnackBar(messsage: string, className: string) {
+    this.snackbar.openSnackBar(messsage, className);
   }
 }
