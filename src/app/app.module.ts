@@ -21,8 +21,7 @@ import { SingInComponent } from './components/login/sing-in/sing-in.component';
 import { VerifyEmailComponent } from './components/login/verify-email/verify-email.component';
 import { MedicalProfileComponent } from './components/medical-profile/medical-profile.component';
 import { AngularMaterialModule } from './material/angular-material.module';
-import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
-
+import { SnackbarComponent } from './components/snack-bar/snack-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,7 @@ import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
     VerifyEmailComponent,
     DialogComponent,
     MedicalProfileComponent,
-    SnackBarComponent,
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +51,7 @@ import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [SnackbarComponent],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
