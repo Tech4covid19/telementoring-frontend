@@ -62,7 +62,9 @@
       <div fxLayout="row" fxLayoutWrap="wrap" class="row">
         <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
           <mat-form-field class="medical-profile-full-width">
-            <input formControlName="password" type="password" matInput placeholder="Password" type="password" />
+            <input formControlName="password" type="password" matInput placeholder="Password" type="password"
+              [type]="hide ? 'text' : 'password'" />
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
           </mat-form-field>
         </div>
         <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
@@ -94,7 +96,7 @@
         <button mat-stroked-button type="submit" color="accent" class="btn-block">
           Signup
         </button>
-      </mat-card-content>-
+      </mat-card-content>
 
     </form>
   </mat-card>

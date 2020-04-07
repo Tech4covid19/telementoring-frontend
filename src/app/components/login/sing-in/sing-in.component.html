@@ -1,30 +1,29 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="box">
-        <mat-card-header>
-            <mat-card-title>Log in</mat-card-title>
-        </mat-card-header>
+<div class="form-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Log in</mat-card-title>
+    </mat-card-header>
 
-        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <mat-card-content>
-                <mat-form-field class="login-full-width">
-                    <input formControlName="email" type="email" matInput placeholder="Email" />
-                </mat-form-field>
+    <form class="form-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-card-content>
+        <mat-form-field class="form-full-width">
+          <input formControlName="email" type="email" matInput placeholder="Email" />
+        </mat-form-field>
 
-                <mat-form-field class="login-full-width">
-                    <input formControlName="password" type="password" matInput placeholder="Password" />
-                </mat-form-field>
-            </mat-card-content>
-            <button type="submit" mat-stroked-button color="accent" class="btn-block">
+        <mat-form-field class="form-full-width">
+          <input formControlName="password" type="password" matInput placeholder="Password"
+            [type]="hide ? 'text' : 'password'" />
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </mat-form-field>
+      </mat-card-content>
+      <button type="submit" mat-stroked-button color="accent" class="btn-block">
         SingIn
       </button>
-        </form>
-        <span>Not registered yet?
-      <a [routerLink]="['register']">Create your account here!</a></span
-    >
-    <span
-      >Did you forgot your password?
-      <a [routerLink]="['reset-password']">Reset it here!</a></span
-    >
+    </form>
+    <span>Not registered yet?
+      <a [routerLink]="['register']">Create your account here!</a></span>
+    <span>Did you forgot your password?
+      <a [routerLink]="['reset-password']">Reset it here!</a></span>
   </mat-card>
 </div>
 <router-outlet></router-outlet>

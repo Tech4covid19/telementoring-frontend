@@ -23,10 +23,16 @@ export class DialogComponent implements OnInit {
     this.form = this.fb.group({});
   }
 
+  /**
+   * When you click yes
+   */
   yes() {
     this.dialogRef.close('yes');
   }
 
+  /**
+   * When you click on
+   */
   no() {
     this.dialogRef.close('close');
   }

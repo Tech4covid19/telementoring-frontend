@@ -12,10 +12,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.login-wrapper {
-  height: 50%;
-}
-
 .box {
   position: relative;
   top: 0;
@@ -56,39 +52,65 @@ body {
   z-index: -1;
 }
 
-.login-wrapper .login-form {
+// Standard system forms CSS
+.form-wrapper {
+  height: 50%;
+}
+
+.form-wrapper .form-form {
+  padding-top: 30px;
   min-width: 100%;
   max-width: 300px;
   width: 100%;
 }
 
-.login-wrapper .login-full-width,
-.login-wrapper .btn-block {
+.form-wrapper .form-full-width,
+.form-wrapper .btn-block {
   width: 100%;
 }
 
-.login-wrapper mat-card-header {
+.form-wrapper mat-card-header {
   text-align: center;
   width: 100%;
   display: block;
   font-weight: 700;
 }
 
-.login-wrapper mat-card-header mat-card-title {
+.form-wrapper mat-card-header mat-card-title {
   font-size: 30px;
   margin: 0;
 }
 
-.login-wrapper .mat-card {
+.form-wrapper .mat-card {
   padding: 40px 70px 50px;
 }
 
-.login-wrapper .mat-stroked-button {
+.form-wrapper .mat-stroked-button {
   border: 1px solid currentColor;
   line-height: 54px;
   background: #fff7fa;
 }
 
-.login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+.form-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
+}
+
+// CSS of the mat-snack-bar component. Cannot be removed
+.mat-snack-bar-container-success {
+  text-align: center !important;
+  color: white !important;
+  background-color: blue !important;
+  .mat-simple-snackbar-action {
+      color: white !important;
+  }
+}
+
+// CSS of the mat-snack-bar component. Cannot be removed
+.mat-snack-bar-container-error {
+  text-align: center !important;
+  color: white !important;
+  background-color: brown !important;
+  .mat-simple-snackbar-action {
+      color: white !important;
+  }
 }

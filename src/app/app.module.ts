@@ -20,8 +20,8 @@ import { ResetPasswordComponent } from './components/login/reset-password/reset-
 import { SingInComponent } from './components/login/sing-in/sing-in.component';
 import { VerifyEmailComponent } from './components/login/verify-email/verify-email.component';
 import { MedicalProfileComponent } from './components/medical-profile/medical-profile.component';
+import { SnackbarComponent } from './components/snack-bar/snack-bar.component';
 import { AngularMaterialModule } from './material/angular-material.module';
-
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { AngularMaterialModule } from './material/angular-material.module';
     VerifyEmailComponent,
     DialogComponent,
     MedicalProfileComponent,
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,8 +51,8 @@ import { AngularMaterialModule } from './material/angular-material.module';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [SnackbarComponent],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule { }

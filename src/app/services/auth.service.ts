@@ -25,6 +25,7 @@ export class AuthService {
       email,
       password
     );
+    localStorage.setItem('email', JSON.stringify(email));
     this.router.navigate(['/chat-room']);
   }
 
@@ -48,11 +49,17 @@ export class AuthService {
   async logout() {
     await this.afAuth.auth.signOut();
     localStorage.removeItem('user');
+    localStorage.removeItem('email');
     this.router.navigate(['/login']);
   }
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return user !== null;
+  }
+
+  get isLoggedInEmail(): boolean {
+    const email = JSON.parse(localStorage.getItem('email'));
+    return email !== null;
   }
 }
