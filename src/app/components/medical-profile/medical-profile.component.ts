@@ -66,8 +66,7 @@ export class MedicalProfileComponent implements OnInit {
         password: new FormControl('', [
           Validators.required,
           Validators.minLength(8),
-          Validators.maxLength(12),
-          PasswordValidator()
+          Validators.maxLength(12)
         ]),
         speciality: new FormControl('', [Validators.required]),
         confirmPassword: ['', Validators.required],
