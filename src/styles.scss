@@ -95,7 +95,7 @@ body {
 
 // CSS of the mat-snack-bar component. Cannot be removed
 .mat-snack-bar-container-sucess {
-  text-align: center;
+  text-align: center !important;
   color: white !important;
   background-color: blue !important;
   .mat-simple-snackbar-action {
@@ -105,7 +105,7 @@ body {
 
 // CSS of the mat-snack-bar component. Cannot be removed
 .mat-snack-bar-container-error {
-  text-align: center;
+  text-align: center !important;
   color: white !important;
   background-color: brown !important;
   .mat-simple-snackbar-action {
