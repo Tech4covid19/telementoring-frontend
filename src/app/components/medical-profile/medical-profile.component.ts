@@ -34,8 +34,8 @@ export class MedicalProfileComponent implements OnInit {
       1º parametro
         Mensagem que deseja que aparece, pode ser que venha do servidor ou que vc digita por aqui mesmo.
       2º parametro
-        Se tiver erro no retorno do back end, deve alterar para this.openSnackBar('mat-snack-bar-container-error');
-        se tiver não tiver retorno do back end, deve alterar para this.openSnackBar('mat-snack-bar-container--sucess')
+        Se tiver erro no retorno do back end, deve alterar para this.openSnackBar(mensagem que deseja, 'error');
+        se tiver não tiver retorno do back end, deve alterar para this.openSnackBar(mensagem que deseja, 'sucess')
     */
     this.snackbar.openSnackBar(
       'Thanks for completing your profile. The dat will be validated and you will receive an e-mail of confirmation !',

@@ -39,7 +39,7 @@ export class SingInComponent implements OnInit {
       if (this.loginForm.get("email").invalid || this.loginForm.get("password").invalid) {
         this.snackbar.openSnackBar(
           'Invalid email or password !',
-          'mat-snack-bar-container-error'
+          'error'
         );
       }
       return;
@@ -55,7 +55,7 @@ export class SingInComponent implements OnInit {
         console.log(error);
         this.snackbar.openSnackBar(
           error.message,
-          'mat-snack-bar-container-error'
+          'error'
         );
       }
     );

@@ -9,24 +9,25 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class SnackbarComponent implements OnInit {
   timeOut = 1500;
 
-  constructor(public snackBar: MatSnackBar) {}
+  constructor(public snackBar: MatSnackBar) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   /**
    * @param message = Message you want to appear
-   * @param className = Can be: mat-snack-bar-container-sucess or mat-snack-bar-container-error
+   * @param className = It's not mandatory. It may be success or error. If it is null it will be the default of the component.
    * @param action = Name of the action that must be performed when clicking on the text.
    * @param verticalPosition = Vertical position. It can be: 'top' or 'bottom'. Default: 'bottom'
    * @param horizontalPosition = Horisontal position. It can be: 'start' | 'center' | 'end' | 'left' | 'right'. Default: 'center'
    */
   openSnackBar(
     message: string,
-    className: string,
+    className?: string,
     action?: string,
     verticalPosition?: any,
     horizontalPosition?: any
   ) {
+    className = className !== null || className !== undefined ? 'mat-snack-bar-container-' + className : className;
     verticalPosition =
       verticalPosition === null || verticalPosition === undefined
         ? 'bottom'
