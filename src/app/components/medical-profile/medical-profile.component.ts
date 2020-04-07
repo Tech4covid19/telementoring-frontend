@@ -17,6 +17,8 @@ import { SnackbarComponent } from '../snack-bar/snack-bar.component';
 })
 export class MedicalProfileComponent implements OnInit {
   medicalProfileForm: FormGroup;
+  hide: any;
+
   constructor(
     private formBuilder: FormBuilder,
     private snackbar: SnackbarComponent,

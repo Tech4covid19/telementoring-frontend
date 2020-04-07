@@ -11,7 +11,9 @@
         </mat-form-field>
 
         <mat-form-field class="form-full-width">
-          <input formControlName="password" type="password" matInput placeholder="Password" />
+          <input formControlName="password" type="password" matInput placeholder="Password"
+            [type]="hide ? 'text' : 'password'" />
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="form-full-width">

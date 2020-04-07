@@ -17,6 +17,7 @@ import { AuthService } from './../../../services/auth.service';
 })
 export class RegistrationComponent implements OnInit {
   registerForm: FormGroup;
+  hide: any;
 
   constructor(
     private authService: AuthService,

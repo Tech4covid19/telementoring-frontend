@@ -15,6 +15,7 @@ import { AuthService } from './../../../services/auth.service';
 })
 export class SingInComponent implements OnInit {
   loginForm: FormGroup;
+  hide: any;
 
   constructor(
     private authService: AuthService,
