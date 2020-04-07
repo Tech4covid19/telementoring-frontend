@@ -7,9 +7,9 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MustMatch } from 'src/app/helpers/must-match.validator';
-import { SnackbarComponent } from '../snack-bar/snack-bar.component';
-import { AuthService } from 'src/app/services/auth.service';
 import { PasswordValidator } from 'src/app/helpers/password.validator';
+import { AuthService } from 'src/app/services/auth.service';
+import { SnackbarComponent } from '../snack-bar/snack-bar.component';
 
 @Component({
   selector: 'app-medical-profile',
@@ -23,7 +23,7 @@ export class MedicalProfileComponent implements OnInit {
     private snackbar: SnackbarComponent,
     private router: Router,
     private authService: AuthService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.createGroupForm();
@@ -39,10 +39,9 @@ export class MedicalProfileComponent implements OnInit {
         Se tiver erro no retorno do back end, deve alterar para this.openSnackBar('mat-snack-bar-container-error');
         se tiver não tiver retorno do back end, deve alterar para this.openSnackBar('mat-snack-bar-container--sucess')
     */
-    this.openSnackBar(
+    this.snackbar.openSnackBar(
       'Thanks for completing your profile. The dat will be validated and you will receive an e-mail of confirmation !',
-      'mat-snack-bar-container-sucess'
-    );
+      'mat-snack-bar-container-sucess');
     /**
       Após implementar a chamada do backend, pode retirar estas mensagens
 
@@ -79,13 +78,5 @@ export class MedicalProfileComponent implements OnInit {
         validator: MustMatch('password', 'confirmPassword'),
       }
     );
-  }
-
-  /**
-   * @param messsage = Message you want to appear
-   * @param className = Can be: mat-snack-bar-container-sucess or mat-snack-bar-container-error
-   */
-  private openSnackBar(messsage: string, className: string) {
-    this.snackbar.openSnackBar(messsage, className);
   }
 }
