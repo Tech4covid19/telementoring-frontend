@@ -39,7 +39,8 @@ export class MedicalProfileComponent implements OnInit {
     */
     this.snackbar.openSnackBar(
       'Thanks for completing your profile. The dat will be validated and you will receive an e-mail of confirmation !',
-      'mat-snack-bar-container-sucess');
+      'mat-snack-bar-container-sucess'
+    );
     /**
       Após implementar a chamada do backend, pode retirar estas mensagens
 
