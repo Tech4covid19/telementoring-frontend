@@ -7,6 +7,7 @@ import { ResetPasswordComponent } from './components/login/reset-password/reset-
 import { SingInComponent } from './components/login/sing-in/sing-in.component';
 import { VerifyEmailComponent } from './components/login/verify-email/verify-email.component';
 import { MedicalProfileComponent } from './components/medical-profile/medical-profile.component';
+import { AuthGuardService } from './services/authguard/auth-guard.service';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -24,10 +25,12 @@ const routes: Routes = [
   {
     path: 'chat-room',
     component: ChatRoomComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'medical-profile',
     component: MedicalProfileComponent,
+    canActivate: [AuthGuardService]
   },
 ];
 
