@@ -39,6 +39,8 @@ export class RegistrationComponent implements OnInit {
         return;
       }
       if (this.registerForm.get("password").errors != null) {
+        // When changing password policies, you must change this return message and change the
+        // MessagePasswordInvalido () method of the PasswordValidator class.
         const password = this.registerForm.get("password").errors;
         if (password.required) {
           this.snackbar.openSnackBar(
@@ -64,13 +66,7 @@ export class RegistrationComponent implements OnInit {
           return;
         } else if (password.passwordInvalido) {
           this.snackbar.openSnackBar(
-            'The password does not comply with the policies. You must have at least: '
-            + '1 number, '
-            + '1 capital character, '
-            + '1 small character, '
-            + '1 special character, '
-            + 'at least 8 characters, '
-            + 'maximum 12 characters!',
+            PasswordValidator.MensagemPasswordInvalido(),
             'error'
           );
           return;
