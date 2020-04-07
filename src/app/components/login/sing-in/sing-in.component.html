@@ -1,16 +1,16 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+<div class="form-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
         <mat-card-header>
             <mat-card-title>Log in</mat-card-title>
         </mat-card-header>
 
-        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <form class="form-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-card-content>
-                <mat-form-field class="login-full-width">
+                <mat-form-field class="form-full-width">
                     <input formControlName="email" type="email" matInput placeholder="Email" />
                 </mat-form-field>
 
-                <mat-form-field class="login-full-width">
+                <mat-form-field class="form-full-width">
                     <input formControlName="password" type="password" matInput placeholder="Password" />
                 </mat-form-field>
             </mat-card-content>
