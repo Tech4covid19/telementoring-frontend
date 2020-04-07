@@ -1,28 +1,28 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="box">
-        <mat-card-header>
-            <mat-card-title>Register</mat-card-title>
-        </mat-card-header>
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
 
-        <form class="login-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <mat-card-content>
-                <mat-form-field class="login-full-width">
-                    <input formControlName="email" type="email" matInput placeholder="Email" />
-                </mat-form-field>
+    <form class="login-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-card-content>
+        <mat-form-field class="login-full-width">
+          <input formControlName="email" type="email" matInput placeholder="Email" />
+        </mat-form-field>
 
-                <mat-form-field class="login-full-width">
-                    <input formControlName="password" type="password" matInput placeholder="Password" />
-                </mat-form-field>
+        <mat-form-field class="login-full-width">
+          <input formControlName="password" type="password" matInput placeholder="Password" />
+        </mat-form-field>
 
-                <mat-form-field class="login-full-width">
-                    <input formControlName="confirmPassword" type="password" matInput placeholder="Password" />
-                </mat-form-field>
-            </mat-card-content>
+        <mat-form-field class="login-full-width">
+          <input formControlName="confirmPassword" type="password" matInput placeholder="Confirm the Password" />
+        </mat-form-field>
+      </mat-card-content>
 
-            <button mat-stroked-button type="submit" color="accent" class="btn-block">
+      <button mat-stroked-button type="submit" color="accent" class="btn-block">
         Register
       </button>
-        </form>
-        <a [routerLink]="'/login'">Back to Login</a>
-    </mat-card>
+    </form>
+    <a [routerLink]="'/login'">Back to Login</a>
+  </mat-card>
 </div>
