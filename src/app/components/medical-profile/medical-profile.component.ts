@@ -5,7 +5,6 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
-import { Router } from '@angular/router';
 import { MustMatch } from 'src/app/helpers/must-match.validator';
 import { PasswordValidator } from 'src/app/helpers/password.validator';
 import { AuthService } from 'src/app/services/auth.service';
@@ -21,7 +20,6 @@ export class MedicalProfileComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private snackbar: SnackbarComponent,
-    private router: Router,
     private authService: AuthService
   ) { }
 
