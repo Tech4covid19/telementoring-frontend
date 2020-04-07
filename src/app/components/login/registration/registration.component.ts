@@ -6,6 +6,7 @@ import {
   Validators
 } from '@angular/forms';
 import { MustMatch } from 'src/app/helpers/must-match.validator';
+import { PasswordValidator } from 'src/app/helpers/password.validator';
 import { SnackbarComponent } from '../../snack-bar/snack-bar.component';
 import { AuthService } from './../../../services/auth.service';
 
@@ -24,20 +25,7 @@ export class RegistrationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group(
-      {
-        email: new FormControl('', [Validators.required, Validators.email]),
-        password: new FormControl('', [
-          Validators.required,
-          Validators.minLength(8),
-          Validators.maxLength(12)
-        ]),
-        confirmPassword: ['', Validators.required]
-      },
-      {
-        validator: MustMatch('password', 'confirmPassword')
-      }
-    );
+    this.createGroupForm();
   }
 
   onSubmit() {
@@ -74,6 +62,18 @@ export class RegistrationComponent implements OnInit {
             'error'
           );
           return;
+        } else if (password.passwordInvalido) {
+          this.snackbar.openSnackBar(
+            'The password does not comply with the policies. You must have at least: '
+            + '1 number, '
+            + '1 capital character, '
+            + '1 small character, '
+            + '1 special character, '
+            + 'at least 8 characters, '
+            + 'maximum 12 characters!',
+            'error'
+          );
+          return;
         }
       } else if (this.registerForm.get("confirmPassword").errors != null) {
         const confirmPassword = this.registerForm.get("confirmPassword").errors;
@@ -106,6 +106,26 @@ export class RegistrationComponent implements OnInit {
           error.message,
           'error'
         );
+      }
+    );
+  }
+
+  private createGroupForm() {
+    this.registerForm = this.formBuilder.group(
+      {
+        email: new FormControl('', [Validators.required, Validators.email]),
+        password: new FormControl('',
+          Validators.compose([
+            Validators.required,
+            Validators.minLength(8),
+            Validators.maxLength(12),
+            PasswordValidator.Validator
+          ])
+        ),
+        confirmPassword: ['', Validators.required]
+      },
+      {
+        validator: MustMatch('password', 'confirmPassword')
       }
     );
   }
